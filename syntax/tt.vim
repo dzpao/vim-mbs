@@ -795,7 +795,7 @@ syntax match ttMatchSpecial "\^\|\~\|\$"
 			\ containedin=ttPatternBlock,ttPatternBlockHigh,ttPatternBlockSub,ttReplaceFormatBlock
 " }}}
 " Format specifiers {{{
-syntax match ttFormat "%\%[.+-][0-9]\{-}[acdghlmnprstuwACLRTU]"
+syntax match ttFormat "%\%[.+-][0-9]\{-}[acdfghlmnprstuwxADHLMSTUX]"
 			\ contained
 			\ containedin=ttFormatBlock,ttEchoBlock
 " }}}
