@@ -901,15 +901,20 @@ syntax match ttCmdSep /;/
 syntax region ttNopComment
 			\ matchgroup=ttNop start="#nop" end=/\;\|$/
 
+syntax region ttNopComment
+			\ matchgroup=ttComment start="///=== {" end=/}/
+			\ contains=ttCodeBlock,ttCmdSep,@ttCmds,ttNopComment
+
 " C-style multi-line comments
 syntax region ttComment start="/\*" end="\*/"
+			\ contains=ttComment
 
 syntax region ttCommentError start="/\*" end="\*/"
 			\ contained
 			\ containedin=ttCodeBlock
 
 " Special notes in Comments
-syntax keyword ttTodo TODO FIXME XXX BUG DEBUG
+syntax keyword ttTodo TODO FIXME XXX BUG DEBUG TBD NOTE
 			\ contained
 			\ containedin=ttComment,ttNopComment
 " }}}
