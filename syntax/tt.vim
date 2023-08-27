@@ -19,6 +19,8 @@ endif
 setlocal iskeyword+=#
 " tintin++ keywords are case insensitive
 syntax case ignore
+" Increase minlines to avoid highlighting errors
+syntax sync minlines=200
 " tintin++ Commands {{{
 " Kill: #kill #killall {{{
 syntax keyword ttCmd #kill
