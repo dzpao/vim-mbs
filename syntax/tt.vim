@@ -238,7 +238,7 @@ syntax keyword ttCmd #line
 			\ skipwhite skipempty
 " }}}
 " UnCommands: #un* {{{
-syntax keyword ttCmdUn #unvar[iable] #untick[er] #undelay #unact[ion] #unevent #unfunc[tion]
+syntax keyword ttCmdUn #unl[ocal] #unvar[iable] #untick[er] #undelay #unact[ion] #unevent #unfunc[tion]
 			\ #unhigh[light] #unmacro #unprompt #unsub[sisitue] #untab #ungag #unalias
 			\ nextgroup=ttUnBlock,ttUn
 			\ skipwhite
