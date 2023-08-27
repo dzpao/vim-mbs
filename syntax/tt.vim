@@ -845,11 +845,15 @@ syntax match ttAnsiEsc /\\e\[[0-9;\\]\{-}m/
 			\ containedin=ALLBUT,ttComment,ttNopComment
 " }}}
 " tintin Variables {{{
-syntax match ttVar "\$\%[{][a-zA-Z_]\+"
+syntax match ttVar "\$\%[{][a-zA-Z_][a-zA-Z0-9_.-]*"
 			\ nextgroup=ttVarIndex
 			\ containedin=ALLBUT,ttComment,ttNopComment
 
-syntax match ttVar "&\%[{][a-zA-Z_]\+" 
+syntax match ttVar "&\%[{][a-zA-Z_][a-zA-Z0-9_.-]*" 
+			\ nextgroup=ttVarIndex
+			\ containedin=ALLBUT,ttComment,ttNopComment
+
+syntax match ttVar "\*\%[{][a-zA-Z_][a-zA-Z0-9_.-]*" 
 			\ nextgroup=ttVarIndex
 			\ containedin=ALLBUT,ttComment,ttNopComment
 " }}}
@@ -878,7 +882,7 @@ syntax region ttFuncBlock
 			\ contains=ttCodeBlock
 			\ contained
 
-syntax match ttFunction "@[A-Za-z_0-9]\+" 
+syntax match ttFunction "@\%[{][a-zA-Z_][a-zA-Z0-9_.-]*" 
 			\ containedin=ALLBUT,ttComment,ttNopComment
 			\ nextgroup=ttFuncBlock
 " }}}
